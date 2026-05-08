@@ -1,0 +1,13 @@
+{
+  "name": "my-mock-notary-page",
+  "version": "1.0.0",
+  "description": "Simple notary booking page with real-time calendar updates using Socket.IO.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "socket.io": "^4.7.2"
+  }
+}

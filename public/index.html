@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notary Booking Calendar</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="navbar">
+      <div class="brand">Rob's Notary Page</div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#calendar">Calendar</a></li>
+        <li><a href="#book">Book</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div>
+        <h1>Notary appointments</h1>
+        <p>Pick a date, choose a slot, and book instantly!</p>
+        <a class="button" href="#calendar">View Calendar</a>
+      </div>
+      <div class="hero-panel">
+        <h2>Today's status</h2>
+        <div id="live-status" class="status-card">Loading available slots...</div>
+      </div>
+    </section>
+
+    <section id="calendar" class="section">
+      <div class="section-header">
+        <h2>Booking Calendar</h2>
+        <p>Current appointments update in real time!</p>
+      </div>
+      <div class="controls">
+        <label for="datePicker">Choose date</label>
+        <input type="date" id="datePicker">
+      </div>
+      <div class="slot-grid" id="slotGrid"></div>
+    </section>
+
+    <section id="book" class="section">
+      <div class="section-header">
+        <h2>Book an appointment</h2>
+        <p>Select a time and confirm your name.</p>
+      </div>
+      <form id="bookingForm" class="booking-form">
+        <label>
+          Your name
+          <input type="text" id="nameInput" placeholder="Enter your name" required>
+        </label>
+        <label>
+          Date
+          <input type="date" id="formDate" required>
+        </label>
+        <label>
+          Time
+          <select id="timeSelect" required>
+            <option value="09:00">09:00 AM</option>
+            <option value="10:00">10:00 AM</option>
+            <option value="11:00">11:00 AM</option>
+            <option value="13:00">01:00 PM</option>
+            <option value="14:00">02:00 PM</option>
+            <option value="15:00">03:00 PM</option>
+            <option value="16:00">04:00 PM</option>
+            <option value="17:00">05:00 PM</option>
+            <option value="18:00">06:00 PM</option>
+          </select>
+        </label>
+        <button type="submit" class="button">Book Appointment</button>
+        <div id="formMessage" class="message"></div>
+      </form>
+    </section>
+
+    <section id="contact" class="section contact-section">
+      <h2>Contact</h2>
+      <p>Need help with a booking? Email RobKCJr010210@gmail.com</p>
+    </section>
+  </main>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
